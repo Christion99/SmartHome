@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "56344800420",
+    "firebase_url": "https://smartbathroom-ffdbe-default-rtdb.firebaseio.com",
+    "project_id": "smartbathroom-ffdbe",
+    "storage_bucket": "smartbathroom-ffdbe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56344800420:android:16c6bb1c2646c6b190ca31",
+        "android_client_info": {
+          "package_name": "com.example.iotuidesign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "56344800420-itqqi1ru2me249vo6ji1vv2vhrm6jf46.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhz_8DDyIPlw6Z9C07UPaQIXmprpCfHws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "56344800420-itqqi1ru2me249vo6ji1vv2vhrm6jf46.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

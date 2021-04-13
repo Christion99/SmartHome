@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">IOT UI Design</string>
+    <string name="smart_bathroom_system">Smart Bathroom System</string>
+    <string name="bathroomicon">BathroomIcon</string>
+    <string name="home_bathroom_devices">Home Bathroom Devices</string>
+    <string name="motion">Motion</string>
+    <string name="water_tank">Water Tank</string>
+    <string name="temperature">Temperature</string>
+</resources>
