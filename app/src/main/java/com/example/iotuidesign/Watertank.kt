@@ -1,10 +1,8 @@
-package com.example.iotuidesign.activity_watertank
+package com.example.iotuidesign
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.iotuidesign.R
 import android.widget.ProgressBar
 import androidx.appcompat.app.ActionBar
 import com.google.firebase.database.DataSnapshot
@@ -12,7 +10,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_watertank.*
-import java.util.*
 
 class Watertank : AppCompatActivity(){
 
