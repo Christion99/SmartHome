@@ -16,8 +16,8 @@ class Watertank : AppCompatActivity(){
     private var database = FirebaseDatabase.getInstance()
     private lateinit var sensorData:String
     private lateinit var sensorUltra: ValueEventListener
-    private val path = "PI_007/UltraSonic"
-    private var myRefs = database.getReference(path).child(path).orderByKey().limitToLast(1)
+    private val path = "UltraSonic"
+    private var myRefs = database.getReference(path)
 
     private var progressBar: ProgressBar? = null
 
