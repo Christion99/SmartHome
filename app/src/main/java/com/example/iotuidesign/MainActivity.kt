@@ -16,6 +16,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent( this@MainActivity, Homepage::class.java)
             startActivity(intent)
             finish()
-        },3000)
+        },4000)
     }
 }
