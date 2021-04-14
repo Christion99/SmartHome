@@ -2,6 +2,8 @@ package com.example.iotuidesign
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.widget.ProgressBar
 import androidx.appcompat.app.ActionBar
@@ -30,7 +32,11 @@ class Watertank : AppCompatActivity(){
         actionBar.title = "Water Tank Level"
         actionBar.setDisplayHomeAsUpEnabled(true)
 
-        getUltraDate()
+        Handler(Looper.getMainLooper()).postDelayed({
+            getUltraDate()
+        }, 2000)
+
+        //getUltraDate()
     }
 
     private fun getUltraDate() {
@@ -40,19 +46,31 @@ class Watertank : AppCompatActivity(){
             override fun onCancelled(p0: DatabaseError) {
                 Log.d(tag, "${p0.toException()}")
             }
+
             override fun onDataChange(p0: DataSnapshot) {
-                if(p0.exists()){
+                val data = p0.value
+                water_value.text = data.toString()
+
+                //progressBar!!.progress = data.toString().toInt() / 5
+                //percentage.text = (data.toString().toInt()/ 5).toString()
+
+                /*
+                if (p0.exists()) {
                     val child = p0.children
-                    for (data in child){
-                        sensorData = data.child("Ultrasonic").value.toString()//change the path variable
-                        water_value.text= (sensorData.toDouble()).toString()
-                        progressBar!!.progress = sensorData.toInt()/5
-                        percentage.text= (sensorData.toInt()/5).toString()
+                    for (data in child) {
+                        sensorData =
+                            data.child("Ultrasonic").value.toString()//change the path variable
+                        water_value.text = (sensorData.toDouble()).toString()
+                        progressBar!!.progress = sensorData.toInt() / 5
+                        percentage.text = (sensorData.toInt() / 5).toString()
                     }
                 }
+                val test = p0.value
+                //Log.d("Test", test.toString())
+                //myRefs.addValueEventListener(sensorUltra)
+                */
             }
         }
-        myRefs.addValueEventListener(sensorUltra)
     }
 
     private fun destroyListeners(){
