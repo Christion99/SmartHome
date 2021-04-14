@@ -27,7 +27,7 @@ class Watertank : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_watertank)
         val actionBar: ActionBar = supportActionBar!!
-        actionBar.title = "Water Tank Reserve"
+        actionBar.title = "Water Tank Level"
         actionBar.setDisplayHomeAsUpEnabled(true)
 
         getUltraDate()
