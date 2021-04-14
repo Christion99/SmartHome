@@ -16,8 +16,8 @@ class Watertank : AppCompatActivity(){
     private var database = FirebaseDatabase.getInstance()
     private lateinit var sensorData:String
     private lateinit var sensorUltra: ValueEventListener
-    private val path = "UltraSonic"
-    private var myRefs = database.getReference(path)
+    var myRefs = database.getReference("PI_007").child("Ultrasonic")
+    //private val path = "UltraSonic"
 
     private var progressBar: ProgressBar? = null
 
@@ -35,20 +35,20 @@ class Watertank : AppCompatActivity(){
 
     private fun getUltraDate() {
         progressBar = findViewById<ProgressBar>(R.id.indicator)
+
         sensorUltra = object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 Log.d(tag, "${p0.toException()}")
             }
+
             override fun onDataChange(p0: DataSnapshot) {
                 if(p0.exists()){
                     val child = p0.children
                     for (data in child){
-                        sensorData = data.child("path").value.toString()//change the path variable
+                        sensorData = data.child("UltraSonic").value.toString()//change the path variable
                         water_value.text= (sensorData.toDouble()).toString()
-
                         progressBar!!.progress = sensorData.toInt()/5
                         percentage.text= (sensorData.toInt()/5).toString()
-
                     }
                 }
             }
