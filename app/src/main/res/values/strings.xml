@@ -16,5 +16,6 @@
     <string name="status">Details: </string>
     <string name="_01">0</string>
     <string name="_02">0</string>
+    <string name="litre">L</string>
     <string name="blank">--</string>
 </resources>
