@@ -40,12 +40,11 @@ class Watertank : AppCompatActivity(){
             override fun onCancelled(p0: DatabaseError) {
                 Log.d(tag, "${p0.toException()}")
             }
-
             override fun onDataChange(p0: DataSnapshot) {
                 if(p0.exists()){
                     val child = p0.children
                     for (data in child){
-                        sensorData = data.child("UltraSonic").value.toString()//change the path variable
+                        sensorData = data.child("Ultrasonic").value.toString()//change the path variable
                         water_value.text= (sensorData.toDouble()).toString()
                         progressBar!!.progress = sensorData.toInt()/5
                         percentage.text= (sensorData.toInt()/5).toString()
