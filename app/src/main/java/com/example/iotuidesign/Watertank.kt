@@ -35,6 +35,7 @@ class Watertank : AppCompatActivity(){
 
     private fun getUltraDate() {
         progressBar = findViewById<ProgressBar>(R.id.indicator)
+
         sensorUltra = object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 Log.d(tag, "${p0.toException()}")
@@ -43,7 +44,7 @@ class Watertank : AppCompatActivity(){
                 if(p0.exists()){
                     val child = p0.children
                     for (data in child){
-                        sensorData = data.child("ultra2").value.toString()//change the path variable
+                        sensorData = data.child("path").value.toString()//change the path variable
                         water_value.text= (sensorData.toDouble()).toString()
 
                         progressBar!!.progress = sensorData.toDouble().toInt()/5
