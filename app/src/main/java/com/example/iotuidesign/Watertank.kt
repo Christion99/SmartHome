@@ -7,19 +7,20 @@ import android.util.Log
 import com.example.iotuidesign.R
 import android.widget.ProgressBar
 import androidx.appcompat.app.ActionBar
-
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import java.text.SimpleDateFormat
+import kotlinx.android.synthetic.main.activity_watertank.*
 import java.util.*
 
 class Watertank : AppCompatActivity(){
 
     private var database = FirebaseDatabase.getInstance()
     private lateinit var sensorData:String
-    private lateinit var sensorUltrasonic: ValueEventListener
+    private lateinit var sensorUltra: ValueEventListener
+    private val path = "PI_007/UltraSonic"
+    private var myRefs = database.getReference(path).child(path).orderByKey().limitToLast(1)
 
     private var progressBar: ProgressBar? = null
 
@@ -32,12 +33,12 @@ class Watertank : AppCompatActivity(){
         actionBar.title = "Water Tank Reserve"
         actionBar.setDisplayHomeAsUpEnabled(true)
 
-        getUltraSensorData()
+        getUltraDate()
     }
 
-    private fun getUltraSensorData() {
+    private fun getUltraDate() {
         progressBar = findViewById<ProgressBar>(R.id.indicator)
-        sensorUltrasonic = object : ValueEventListener {
+        sensorUltra = object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 Log.d(tag, "${p0.toException()}")
             }
@@ -46,21 +47,20 @@ class Watertank : AppCompatActivity(){
                     val child = p0.children
                     for (data in child){
                         sensorData = data.child("ultra2").value.toString()//change the path variable
-                        "water_value.text= (sensorData.toDouble()).toString()"
-                        progressBar!!.progress = sensorData.toDouble().toInt()/2
-                        "percentage.text= (sensorData.toDouble()/2).toString()"
+                        water_value.text= (sensorData.toDouble()).toString()
 
-                        "val status = (sensorData.toDouble()).toString()"
-                        "setStatus(status)"
+                        progressBar!!.progress = sensorData.toDouble().toInt()/5
+                        percentage.text= (sensorData.toDouble()/5).toString()
+
                     }
                 }
             }
         }
-        "addValueEventListener(sensorUltrasonic)"
+        myRefs.addValueEventListener(sensorUltra)
     }
 
     private fun destroyListeners(){
-        "myRefSens.removeEventListener(sensorUltrasonic)"
+        myRefs.removeEventListener(sensorUltra)
     }
 
     override fun onDestroy() {

@@ -4,7 +4,17 @@
     <string name="bathroomicon">BathroomIcon</string>
     <string name="home_bathroom_devices">Home Bathroom Devices</string>
     <string name="motion">Motion</string>
-    <string name="water_tank">Water Tank</string>
     <string name="temperature">Temperature</string>
-    <string name="percentage">Percentage</string>
+
+
+    <string name="water_tank">Water Tank</string>
+    <string name="indicator">Water Level: </string>
+    <string name="water_reserve_level">Water Tank Details</string>
+    <string name="water_value">Water Level:  </string>
+    <string name="percentage"><![CDATA[percentage(%): ]]></string>
+    <string name="symbol">%</string>
+    <string name="status">Details: </string>
+    <string name="_01">0</string>
+    <string name="_02">0</string>
+    <string name="blank">--</string>
 </resources>
