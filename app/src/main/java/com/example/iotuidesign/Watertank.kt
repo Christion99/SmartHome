@@ -35,7 +35,6 @@ class Watertank : AppCompatActivity(){
 
     private fun getUltraDate() {
         progressBar = findViewById<ProgressBar>(R.id.indicator)
-
         sensorUltra = object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 Log.d(tag, "${p0.toException()}")
@@ -47,8 +46,8 @@ class Watertank : AppCompatActivity(){
                         sensorData = data.child("path").value.toString()//change the path variable
                         water_value.text= (sensorData.toDouble()).toString()
 
-                        progressBar!!.progress = sensorData.toDouble().toInt()/5
-                        percentage.text= (sensorData.toDouble()/5).toString()
+                        progressBar!!.progress = sensorData.toInt()/5
+                        percentage.text= (sensorData.toInt()/5).toString()
 
                     }
                 }
@@ -62,7 +61,7 @@ class Watertank : AppCompatActivity(){
     }
 
     override fun onDestroy() {
-        Log.d(tag, "ThermometerOnDestroy")
+        Log.d(tag, "UltrasonicOnDestroy")
         destroyListeners()
         super.onDestroy()
     }
