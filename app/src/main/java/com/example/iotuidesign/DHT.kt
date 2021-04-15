@@ -1,3 +1,4 @@
+/*
 package com.example.iotuidesign
 
 import android.os.Bundle
@@ -104,3 +105,4 @@ class DHT : AppCompatActivity() {
         return true
     }
 }
+*/
