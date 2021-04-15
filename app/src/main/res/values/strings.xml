@@ -33,5 +33,17 @@
     <string name="dDetect">Not Occupied</string>
     <string name="datetime">Date n Time</string>
 
+    <string name="txtDatnT">--</string>
+    <string name="txtFanS">--</string>
+    <string name="txtHum">--</string>
+    <string name="txtRtime">--</string>
+    <string name="txtTem">--</string>
+    <string name="time_date"><![CDATA[time & date:]]></string>
+    <string name="fan_status">Fan Status</string>
+    <string name="humidity">Humidity:</string>
+    <string name="remaining_time">Remaining Time:</string>
+    <string name="uibnuib">Temperature:</string>
+    <string name="dht_sensor">DHT Sensor</string>
+
 
 </resources>

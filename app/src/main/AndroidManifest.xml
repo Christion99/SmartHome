@@ -12,7 +12,7 @@
         <activity android:name=".Homepage" />
         <activity android:name=".Watertank" />
         <activity android:name=".Motion"/>
-
+        <activity android:name=".DHT" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

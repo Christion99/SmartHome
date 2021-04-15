@@ -82,29 +82,5 @@ class Watertank : AppCompatActivity() {
         this.finish()
         return true
     }
-
-    /*
-    @SuppressLint("SetTextI18n")
-    private fun setStatus(status: String) {
-        Handler(Looper.getMainLooper()).postDelayed({
-            when {
-                status < 100.toString() -> {
-                    txtDetail.text =
-                        "There's a problem with the water tank. Water level is below 100 Litre"
-                }
-                status <= 475.toString() -> {
-                    txtDetail.text =
-                        "There's a problem with the water tank. Water level is over 475 Litre"
-                }
-                status >= 100.toString() && status <= 475.toString() -> {
-                    txtDetail.text = "Water tank status is good."
-                }
-                else -> {
-                    txtDetail.text = "Error! Please manually check the water tank."
-                }
-            }
-        }, 500)
-    }
-    */
 }
 
