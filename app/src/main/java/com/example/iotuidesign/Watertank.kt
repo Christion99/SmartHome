@@ -1,6 +1,5 @@
 package com.example.iotuidesign
 
-import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
@@ -20,11 +19,8 @@ class Watertank : AppCompatActivity() {
     private var database = FirebaseDatabase.getInstance()
     private lateinit var sensorUltra: ValueEventListener
 
-    private lateinit var sensorData:String
-    private lateinit var sensorCond:String
 
     var myRefs = database.getReference("Ultrasonic")
-    //private val path = "UltraSonic"
 
     private var progressBar: ProgressBar? = null
 
@@ -37,18 +33,17 @@ class Watertank : AppCompatActivity() {
         actionBar.title = "Water Tank"
         actionBar.setDisplayHomeAsUpEnabled(true)
         Handler(Looper.getMainLooper()).postDelayed({
-            getUltraDate()
+            getUltraData()
         }, 2000)
     }
 
-    private fun getUltraDate() {
+    private fun getUltraData() {
         progressBar = findViewById<ProgressBar>(R.id.indicator)
 
         sensorUltra = object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 Log.d(tag, "${p0.toException()}")
             }
-
 
             override fun onDataChange(p0: DataSnapshot) {
                 /*
@@ -74,9 +69,9 @@ class Watertank : AppCompatActivity() {
                 }
 
                  */
+
                 //1 node
                 water_value.text=" "
-                val data = p0.value
                 val vol = p0.child("Volume").value.toString()
                 val cond = p0.child("Condition").value
                 val det = p0.child("Details").value

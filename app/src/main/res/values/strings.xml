@@ -22,4 +22,16 @@
     <string name="blank">--</string>
     <string name="dot">.</string>
 
+    <string name="txtMotion">Motion :</string>
+    <string name="fDetect">Not Detected</string>
+    <string name="light">light</string>
+    <string name="fan">fan</string>
+    <string name="door">door</string>
+    <string name="fOff">--</string>
+    <string name="fOn">--</string>
+    <string name="fLocked">--</string>
+    <string name="dDetect">Not Occupied</string>
+    <string name="datetime">Date n Time</string>
+
+
 </resources>

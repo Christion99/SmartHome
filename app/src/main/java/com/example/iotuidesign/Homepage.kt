@@ -1,8 +1,8 @@
 package com.example.iotuidesign
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_homepage.*
 
 class Homepage : AppCompatActivity() {
@@ -12,6 +12,11 @@ class Homepage : AppCompatActivity() {
 
         btnTank.setOnClickListener{
             val intent = Intent (this, Watertank::class.java)
+            startActivity(intent)
+        }
+
+        btnMotion.setOnClickListener{
+            val intent = Intent (this, Motion::class.java)
             startActivity(intent)
         }
     }
