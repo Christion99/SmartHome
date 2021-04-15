@@ -10,10 +10,11 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:text="@string/time_date"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23"
-        tools:layout_editor_absoluteX="53dp"
         tools:ignore="MissingConstraints" />
 
 
@@ -21,21 +22,23 @@
         android:id="@+id/iddate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
         android:text="@string/txtDatnT"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5"
-        tools:layout_editor_absoluteX="246dp"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
-
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:text="@string/fan_status"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        tools:layout_editor_absoluteX="62dp"
         tools:ignore="MissingConstraints" />
 
 
@@ -43,84 +46,94 @@
         android:id="@+id/idfan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
         android:text="@string/txtFanS"
         app:layout_constraintBottom_toBottomOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toTopOf="@+id/textView7"
-        tools:layout_editor_absoluteX="246dp"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
-
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:text="@string/humidity"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        tools:layout_editor_absoluteX="69dp"
         tools:ignore="MissingConstraints" />
+
 
     <TextView
-        android:id="@+id/ifhum"
+        android:id="@+id/idhum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="58dp"
         android:text="@string/txtHum"
         app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
         app:layout_constraintTop_toTopOf="@+id/textView17"
-        tools:layout_editor_absoluteX="246dp"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
-
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:text="@string/remaining_time"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17"
-        tools:layout_editor_absoluteX="23dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/idtimerem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:text="@string/txtRtime"
         app:layout_constraintBottom_toBottomOf="@+id/textView19"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
         app:layout_constraintTop_toTopOf="@+id/textView19"
-        tools:layout_editor_absoluteX="246dp"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:text="@string/uibnuib"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19"
-        tools:layout_editor_absoluteX="44dp"
         tools:ignore="MissingConstraints" />
 
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/idtemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
         android:text="@string/txtTem"
         app:layout_constraintBottom_toBottomOf="@+id/textView21"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
         app:layout_constraintTop_toTopOf="@+id/textView21"
-        tools:layout_editor_absoluteX="246dp"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
-
 
     <TextView
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
         android:text="@string/dht_sensor"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="54dp"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

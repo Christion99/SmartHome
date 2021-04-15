@@ -1,4 +1,3 @@
-/*
 package com.example.iotuidesign
 
 import android.os.Bundle
@@ -23,7 +22,7 @@ class DHT : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_motion)
+        setContentView(R.layout.activity_dht)
         val actionBar: ActionBar = supportActionBar!!
         actionBar.title = "DHT"
         actionBar.setDisplayHomeAsUpEnabled(true)
@@ -40,61 +39,28 @@ class DHT : AppCompatActivity() {
 
             override fun onDataChange(p0: DataSnapshot) {
 
-                val bStatus = p0.child("Bathroom Status").value.toString()
-                val datetime = p0.child("DateAndTime").value.toString()
-                val dStatus = p0.child("Door Status").value.toString()
                 val fStatus = p0.child("Fan Status").value.toString()
-                val lStatus = p0.child("Light Status").value.toString()
-                val mStatus = p0.child("Motion").value.toString()
+                val datetime = p0.child("Current date and time").value.toString()
+                val tStatus = p0.child("Temperature").value.toString()
+                val rTimeStatus = p0.child("Remaining Time").value.toString()
+                val hStatus = p0.child("Humidity").value.toString()
 
-                .text = bStatus
-                dtState.text = datetime
-                motionState.text = mStatus
-                lightState.text = lStatus
-                fanState.text = fStatus
-                doorState.text = dStatus
-
-                //door
-                when (doorState.text) {
-                    "Lock" -> {
-                        swDoor.isChecked = true
-                    }
-                    else -> {
-                        swDoor.isChecked = false
-                    }
-                }
-
-                //fan
-                when {
-                    fanState.text != "OFF" -> {
-                        swFan.isChecked = true
-                    }
-                    else -> {
-                        swFan.isChecked = false
-                    }
-                }
-
-                //light
-                when {
-                    lightState.text != "OFF" -> {
-                        swLight.isChecked = true
-                    }
-                    else -> {
-                        swLight.isChecked = false
-                    }
-                }
-
+                iddate.text = datetime
+                idfan.text = fStatus
+                idhum.text = hStatus
+                idtimerem.text = rTimeStatus
+                idtemp.text = tStatus
             }
         }
-        myRefs.addValueEventListener(sensorMotion)
+        myRefs.addValueEventListener(sensorDHT)
     }
 
     private fun destroyListeners() {
-        myRefs.removeEventListener(sensorMotion)
+        myRefs.removeEventListener(sensorDHT)
     }
 
     override fun onDestroy() {
-        Log.d(tag, "MotionOnDestroy")
+        Log.d(tag, "DHTOnDestroy")
         destroyListeners()
         super.onDestroy()
     }
@@ -105,4 +71,3 @@ class DHT : AppCompatActivity() {
         return true
     }
 }
-*/

@@ -19,5 +19,10 @@ class Homepage : AppCompatActivity() {
             val intent = Intent (this, Motion::class.java)
             startActivity(intent)
         }
+
+        btnTemp.setOnClickListener{
+            val intent = Intent (this, DHT::class.java)
+            startActivity(intent)
+        }
     }
 }
