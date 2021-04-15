@@ -19,7 +19,6 @@ class Watertank : AppCompatActivity() {
     private var database = FirebaseDatabase.getInstance()
     private lateinit var sensorUltra: ValueEventListener
 
-
     var myRefs = database.getReference("Ultrasonic")
 
     private var progressBar: ProgressBar? = null
