@@ -85,11 +85,9 @@ class Watertank : AppCompatActivity() {
                 }else {
                     rgbdot.setTextColor(Color.parseColor("#00B32C"))
                 }
-
                 progressBar!!.progress = vol.toString().toInt() / 5
                 percentage.text = (vol.toInt() / 5).toString()
             }
-
         }
         myRefs.addValueEventListener(sensorUltra)
     }

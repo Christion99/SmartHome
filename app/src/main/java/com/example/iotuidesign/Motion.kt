@@ -31,7 +31,7 @@ class Motion : AppCompatActivity() {
         }, 2000)
     }
 
-    private fun getMotionData(){
+    private fun getMotionData() {
         sensorMotion = object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 Log.d(tag, "${p0.toException()}")
@@ -56,30 +56,30 @@ class Motion : AppCompatActivity() {
                 //door
                 when (doorState.text) {
                     "Lock" -> {
-                        swDoor.isChecked=true
+                        swDoor.isChecked = true
                     }
                     else -> {
-                        swDoor.isChecked=false
+                        swDoor.isChecked = false
                     }
                 }
 
                 //fan
                 when {
                     fanState.text != "OFF" -> {
-                        swFan.isChecked=true
+                        swFan.isChecked = true
                     }
                     else -> {
-                        swFan.isChecked=false
+                        swFan.isChecked = false
                     }
                 }
 
                 //light
                 when {
                     lightState.text != "OFF" -> {
-                        swLight.isChecked=true
+                        swLight.isChecked = true
                     }
                     else -> {
-                        swLight.isChecked=false
+                        swLight.isChecked = false
                     }
                 }
 
