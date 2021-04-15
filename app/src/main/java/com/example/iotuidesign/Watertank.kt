@@ -45,30 +45,6 @@ class Watertank : AppCompatActivity() {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                /*
-                if (p0.exists()) {
-                    val child = p0.children
-                    for (data in child) {
-                        var cond = data.child("Condition").value
-                        var vol = data.child("Volume").value
-
-                        sensorCond = data.value.toString()
-                        sensorData = data.value.toString()
-
-                        water_value.text    = vol.toString()
-                        txtDetail.text      = cond.toString()
-
-                        /*
-                        sensorData = data.child("Volume").value.toString()
-                        water_value.text = sensorData.toInt().toString()
-                        progressBar!!.progress = sensorData.toDouble().toInt() / 5
-                        percentage.text = (sensorData.toDouble() / 5).toString()
-                        */
-                    }
-                }
-
-                 */
-
                 //1 node
                 water_value.text=" "
                 val vol = p0.child("Volume").value.toString()
