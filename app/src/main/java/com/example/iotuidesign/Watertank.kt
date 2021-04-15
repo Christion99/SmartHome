@@ -1,6 +1,7 @@
 package com.example.iotuidesign
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -17,9 +18,12 @@ import kotlinx.android.synthetic.main.activity_watertank.*
 class Watertank : AppCompatActivity() {
 
     private var database = FirebaseDatabase.getInstance()
-    private lateinit var sensorData: String
     private lateinit var sensorUltra: ValueEventListener
-    var myRefs = database.getReference("PI_007").child("Ultrasonic")
+
+    private lateinit var sensorData:String
+    private lateinit var sensorCond:String
+
+    var myRefs = database.getReference("Ultrasonic")
     //private val path = "UltraSonic"
 
     private var progressBar: ProgressBar? = null
@@ -34,7 +38,6 @@ class Watertank : AppCompatActivity() {
         actionBar.setDisplayHomeAsUpEnabled(true)
         Handler(Looper.getMainLooper()).postDelayed({
             getUltraDate()
-
         }, 2000)
     }
 
@@ -46,25 +49,52 @@ class Watertank : AppCompatActivity() {
                 Log.d(tag, "${p0.toException()}")
             }
 
-            @SuppressLint("SetTextI18n")
+
             override fun onDataChange(p0: DataSnapshot) {
+                /*
+                if (p0.exists()) {
+                    val child = p0.children
+                    for (data in child) {
+                        var cond = data.child("Condition").value
+                        var vol = data.child("Volume").value
+
+                        sensorCond = data.value.toString()
+                        sensorData = data.value.toString()
+
+                        water_value.text    = vol.toString()
+                        txtDetail.text      = cond.toString()
+
+                        /*
+                        sensorData = data.child("Volume").value.toString()
+                        water_value.text = sensorData.toInt().toString()
+                        progressBar!!.progress = sensorData.toDouble().toInt() / 5
+                        percentage.text = (sensorData.toDouble() / 5).toString()
+                        */
+                    }
+                }
+
+                 */
+                //1 node
+                water_value.text=" "
                 val data = p0.value
-                water_value.text = data.toString()
+                val vol = p0.child("Volume").value.toString()
+                val cond = p0.child("Condition").value
+                val det = p0.child("Details").value
 
-                val mainHandler = Handler(Looper.getMainLooper(), Handler.Callback {
-                    setStatus(water_value.toString())
-                    true
-                })
+                water_value.text    = vol.toInt().toString()
+                txtCond.text        =cond.toString()
+                txtDetail.text      = det.toString()
 
-                progressBar!!.progress = data.toString().toInt() / 5
-                percentage.text = (data.toString().toInt() / 5).toString()
-                val status = percentage.toString()
-                setStatus(status)
-                //val status = percentage.toString()
-                //setStatus(status)
-                //setStatus(water_value.toString())
+                if (txtCond.text != "Good"){
+                    rgbdot.setTextColor(Color.parseColor("#B3000C"))
+                }else {
+                    rgbdot.setTextColor(Color.parseColor("#00B32C"))
+                }
 
+                progressBar!!.progress = vol.toString().toInt() / 5
+                percentage.text = (vol.toInt() / 5).toString()
             }
+
         }
         myRefs.addValueEventListener(sensorUltra)
     }
@@ -85,21 +115,28 @@ class Watertank : AppCompatActivity() {
         return true
     }
 
+    /*
     @SuppressLint("SetTextI18n")
     private fun setStatus(status: String) {
         Handler(Looper.getMainLooper()).postDelayed({
-            if (status < 100.toString()) {
-                txtDetail.text =
-                    "There's a problem with the water tank. Water level is below 100 Litre"
-            } else if (status <= 475.toString()) {
-                txtDetail.text =
-                    "There's a problem with the water tank. Water level is over 475 Litre"
-            } else if (status >= 100.toString() && status <= 475.toString()) {
-                txtDetail.text = "Water tank status is good."
-            } else {
-                txtDetail.text = "Error! Please manually check the water tank."
+            when {
+                status < 100.toString() -> {
+                    txtDetail.text =
+                        "There's a problem with the water tank. Water level is below 100 Litre"
+                }
+                status <= 475.toString() -> {
+                    txtDetail.text =
+                        "There's a problem with the water tank. Water level is over 475 Litre"
+                }
+                status >= 100.toString() && status <= 475.toString() -> {
+                    txtDetail.text = "Water tank status is good."
+                }
+                else -> {
+                    txtDetail.text = "Error! Please manually check the water tank."
+                }
             }
         }, 500)
     }
+    */
 }
 

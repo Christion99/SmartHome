@@ -12,10 +12,14 @@
     <string name="water_reserve_level">Water Tank Details</string>
     <string name="water_value">Water Level:  </string>
     <string name="percentage"><![CDATA[percentage(%): ]]></string>
+    <string name="condition">Condition: </string>
     <string name="symbol">%</string>
     <string name="status">Details: </string>
     <string name="_01">0</string>
     <string name="_02">0</string>
+    <string name="_123">0</string>
     <string name="litre">L</string>
     <string name="blank">--</string>
+    <string name="dot">.</string>
+
 </resources>
